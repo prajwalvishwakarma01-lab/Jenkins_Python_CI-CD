@@ -15,7 +15,7 @@ pipeline {
     stage('Check Python') {
       steps {
           bat 'where python'
-          bat 'python --version'
+          bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
       }
     }
 
@@ -29,14 +29,14 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         echo 'Installing Dependencies'
-        bat 'pyton -m pip install -r requirements.txt'
+        bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
       }
     }
 
     stage('Run Tests') {
       steps {
         echo 'Running Pytest'
-        bat 'python -m pytest'
+        bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
       }
     }
 
