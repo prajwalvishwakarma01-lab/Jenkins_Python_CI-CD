@@ -12,12 +12,7 @@ pipeline {
         echo 'Source code checkout completed'
       }
     }
-    stage('Check Python') {
-      steps {
-          bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
-      }
-    }
-
+    
     stage('Build') {
       steps {
         echo 'Building Docker Image'
@@ -28,14 +23,14 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         echo 'Installing Dependencies'
-        bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
+        bat 'py -m pip install -r requirements.txt'
       }
     }
 
     stage('Run Tests') {
       steps {
         echo 'Running Pytest'
-        bat '"C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
+        bat 'py -m pytest'
       }
     }
 
