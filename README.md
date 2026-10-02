@@ -40,3 +40,10 @@ docker run -d -p 5000:5000 flask-demo
 ## Jenkins
  
 Configure a Pipeline Job and point it to the repository Jenkinsfile.
+
+## Challenges Faced
+ 
+- Jenkins could not detect Python installed for the current user.
+- Configured Python for all users and updated Windows environment variables.
+- Resolved Docker deployment port conflicts.
+- Successfully implemented automated build, test and deployment stages.
