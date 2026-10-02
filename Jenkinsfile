@@ -12,6 +12,12 @@ pipeline {
         echo 'Source code checkout completed'
       }
     }
+    stage('Check Python') {
+      steps {
+          bat 'where python'
+          bat 'python --version'
+      }
+    }
 
     stage('Build') {
       steps {
@@ -23,14 +29,14 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         echo 'Installing Dependencies'
-        bat 'pip install -r requirements.txt'
+        bat 'pyton -m pip install -r requirements.txt'
       }
     }
 
     stage('Run Tests') {
       steps {
         echo 'Running Pytest'
-        bat 'pytest'
+        bat 'python -m pytest'
       }
     }
 
